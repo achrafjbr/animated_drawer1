@@ -16,7 +16,6 @@ class _MyAppState extends State<MyApp> {
   bool isShow = false;
   double xOffset = 0.99;
   double yOffset = 0.99;
-  Color startColor = Colors.amber;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -28,6 +27,7 @@ class _MyAppState extends State<MyApp> {
           child: Stack(
             alignment: Alignment.center,
             children: [
+              /// Down layer: Drawer.
               Container(
                 height: size.height * 1,
                 width: size.width * 1,
@@ -101,8 +101,7 @@ class _MyAppState extends State<MyApp> {
                     ]),
               ),
 
-              /// shift this layer from the top.
-
+              /// Top layer.
               AnimatedContainer(
                 curve: Curves.bounceOut,
                 duration: const Duration(seconds: 1),
